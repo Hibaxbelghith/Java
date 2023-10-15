@@ -1,7 +1,7 @@
 package tn.esprit.gestionzoo.main;
 
-import tn.esprit.gestionzoo.entities.Animal;
-import tn.esprit.gestionzoo.entities.Zoo;
+import tn.esprit.gestionzoo.entities.*;
+
 public class Test {
     public static void main(String[] args) {
         //Instruction 5
@@ -49,6 +49,22 @@ public class Test {
 
         //Instruction11
         myZoo.AffichageAnimaux();
+
+        Aquatic aqua = new Aquatic("Ocean","Dolphinidae","Flipper",12,true);
+        Terristial T = new Terristial(4,"Canidae","Fido",6,true);
+        Dauphin D = new Dauphin((float) 20.5,"Ocean","Delphinidae","Splash",15,true);
+        Penguin P = new Penguin((float) 9.3,"Southern Ocean","Spheniscidae","Waddle",7,false);
+        System.out.println(aqua);
+        //toString : Instruction 23
+        System.out.println(T);
+        System.out.println(D);
+        System.out.println(P);
+        //redefinition : meme affichage pour aquatic et penguin et affichage particulier pour dauphin
+        aqua.swim();
+        D.swim();
+        P.swim();
+
+        
 
 
     }
