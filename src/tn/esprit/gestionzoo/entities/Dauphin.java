@@ -12,6 +12,8 @@ public class Dauphin extends Aquatic{
         return ("Vitesse de nage : "+this.swimmingSpeed+" "+"habitat : "+this.habitat+" "+"Famille : "+super.getFamily()+" "+"nom : "+super.getName()+" "+"age : "+super.getAge()+" "+"isMammal ? : "+super.isMammal());
     }
 
+
+    @Override
     public void swim(){
         System.out.println("This dolphin is swimming.");
     }

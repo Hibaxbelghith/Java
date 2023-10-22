@@ -21,7 +21,7 @@ public class Test {
 
         //Instruction 6
         // Création d'un animal lion:
-        Animal lion = new Animal("Félin", "lion", 20, true);
+        //Animal lion = new Animal("Félin", "lion", 20, true);
         // Création d'un zoo zooPark
         //Zoo myZoo = new Zoo("ZooParc","France", 30);
         // => myZoo ne peut pas accepter le tableau entre parethese car il n'est pas mis comme argument en parametres constructeur
@@ -30,7 +30,7 @@ public class Test {
         // Créer un tableau d'animaux
         Animal[] zooAnimals = new Animal[25];
         // Ajouter le lion à la case 0 du tableau d'animaux
-        zooAnimals[0] = lion;
+        //zooAnimals[0] = lion;
         // Créer un zoo (myZoo) avec le tableau d'animaux
         Zoo myZoo = new Zoo(zooAnimals, "Mon Zoo", "Ma Ville");
 
@@ -42,29 +42,38 @@ public class Test {
 
         //Instruction 9
         //Aprés la définition de methode toString() l'objet myZoo et lion s'affichent
-        System.out.println(lion);
+        //System.out.println(lion);
 
         //Instruction 10
-        myZoo.addAnimal(lion);
+        //myZoo.addAnimal(lion);
 
         //Instruction11
         myZoo.AffichageAnimaux();
 
-        Aquatic aqua = new Aquatic("Ocean","Dolphinidae","Flipper",12,true);
+        //Aquatic aqua = new Aquatic("Ocean","Dolphinidae","Flipper",12,true);
         Terristial T = new Terristial(4,"Canidae","Fido",6,true);
         Dauphin D = new Dauphin((float) 20.5,"Ocean","Delphinidae","Splash",15,true);
         Penguin P = new Penguin((float) 9.3,"Southern Ocean","Spheniscidae","Waddle",7,false);
-        System.out.println(aqua);
+        //System.out.println(aqua);
         //toString : Instruction 23
         System.out.println(T);
         System.out.println(D);
         System.out.println(P);
         //redefinition : meme affichage pour aquatic et penguin et affichage particulier pour dauphin
-        aqua.swim();
+        //aqua.swim();
         D.swim();
         P.swim();
 
-        
+        //Instruction 26
+        //myZoo.addAquaticAnimal(aqua);
+        myZoo.addAquaticAnimal(D);
+        myZoo.addAquaticAnimal(P);
+
+        //Instruction 26
+        for(int i=0;i<myZoo.aquaticAnimals.length;i++){
+            myZoo.aquaticAnimals[i].swim();
+        }
+
 
 
     }

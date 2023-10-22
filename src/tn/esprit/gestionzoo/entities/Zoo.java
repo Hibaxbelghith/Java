@@ -7,6 +7,8 @@ public class Zoo {
     private static final int nbrCages = 25; //Instruction14
     private int animaux;
 
+    public Aquatic [] aquaticAnimals = new Aquatic[10]; //Instruction 25
+
     public Zoo() {
     }
 
@@ -117,6 +119,45 @@ public class Zoo {
        return z2;
 
     }
+
+
+    public void addAquaticAnimal(Aquatic aquatic) {
+        for (int i = 0; i < aquaticAnimals.length; i++) {
+            if (aquaticAnimals[i] == null) { // recherchez la première case vide dans le tableau
+                aquaticAnimals[i] = aquatic;
+                return; // Sortez de la boucle apres l'ajout
+            }
+        }
+    }
+
+    public float maxPenguinSwimmingDepth() {
+        float maxDepth = 0;
+        for (Aquatic animal : aquaticAnimals) {
+            if (animal instanceof Penguin) {
+                float depth = ((Penguin) animal).swimmingDepth;
+                if (depth > maxDepth)
+                    maxDepth = depth;
+            }
+        }
+        return maxDepth;
+    }
+
+    public void displayNumberOfAquaticsByType(){
+        int nbDauphin=0;
+        int nbPenguin=0;
+        for (Aquatic animal : aquaticAnimals) {
+            if (animal instanceof Penguin) {
+                nbPenguin++;
+            }
+            if (animal instanceof Dauphin){
+                nbPenguin++;
+            }
+        }
+        System.out.println("le nombre des penguin est"+nbPenguin+"le nombre des dauphins"+nbDauphin);
+    }
+
+
+
 
 }
 
