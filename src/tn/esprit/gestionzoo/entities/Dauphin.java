@@ -3,6 +3,8 @@ package tn.esprit.gestionzoo.entities;
 public class Dauphin extends Aquatic{
     protected float swimmingSpeed; //vitesse de nage.
 
+
+
     public Dauphin(float swimmingSpeed,String habitat,String family,String name,int age, boolean isMammal){
         super(habitat,family,name,age,isMammal);
         this.swimmingSpeed=swimmingSpeed;

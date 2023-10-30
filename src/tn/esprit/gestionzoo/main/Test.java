@@ -3,7 +3,7 @@ package tn.esprit.gestionzoo.main;
 import tn.esprit.gestionzoo.entities.*;
 
 public class Test {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ZooFullException {
         //Instruction 5
         // Création d'un animal (lion) en utilisant le constructeur par défaut
         //Animal lion = new Animal();
@@ -69,10 +69,21 @@ public class Test {
         myZoo.addAquaticAnimal(D);
         myZoo.addAquaticAnimal(P);
 
-        //Instruction 26
-        for(int i=0;i<myZoo.aquaticAnimals.length;i++){
-            myZoo.aquaticAnimals[i].swim();
-        }
+
+        Zoo zz = new Zoo();
+        try {
+            zz.addAnimal(D);
+            zz.addAnimal(P);
+            zz.displayZoo();
+        } catch (ZooFullException e) {
+        System.out.println(e.getMessage());
+    }
+
+
+
+
+
+
 
 
 
