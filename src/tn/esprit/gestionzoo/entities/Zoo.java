@@ -4,8 +4,10 @@ public class Zoo {
     private Animal[] animals;
     private String name, city;
 
-    private static final int nbrCages = 25; //Instruction14
+    private static final int nbrCages = 3; //Instruction14
     private int animaux;
+
+    public Aquatic [] aquaticAnimals = new Aquatic[10]; //Instruction 25
 
     public Zoo() {
     }
@@ -63,17 +65,12 @@ public class Zoo {
         return "Zoo name :" + name + ", city : " + city + ", nombres Cages : " + nbrCages + "]";
     }
 
-    public boolean addAnimal(Animal animal) {
-        if (searchAnimal(animal) != -1)
-            return false;
-        if (isZooFull()==true) { //Instruction 17
+    public void addAnimal(Animal animal) throws ZooFullException {
+            if (animaux==nbrCages){
+                throw new ZooFullException();}
+            else {
             animals[animaux] = animal;
-            animaux++;
-            return true;
-        } else {
-            System.out.println("Le zoo est plein");
-            return false;
-        }
+            animaux++;}
     }
 
 
@@ -86,13 +83,13 @@ public class Zoo {
         }
     }
 
-    int searchAnimal(Animal animal) {
+    public int searchAnimal(Animal animal) {
         int indice = -1;
         for (int i = 0; i < animaux; i++) {
             if (animals[i].getName() == animal.getName())
                 return i;
         }
-        return indice;
+        return -1;
     }
 
     boolean removeAnimal(Animal animal) {
@@ -100,6 +97,7 @@ public class Zoo {
         if (Animalindex == -1)
             return false;
         animals[Animalindex] = null;
+        animaux--;
         return true;
     }
 
@@ -117,6 +115,45 @@ public class Zoo {
        return z2;
 
     }
+
+
+    public void addAquaticAnimal(Aquatic aquatic) {
+        for (int i = 0; i < aquaticAnimals.length; i++) {
+            if (aquaticAnimals[i] == null) { // recherchez la première case vide dans le tableau
+                aquaticAnimals[i] = aquatic;
+                return; // Sortez de la boucle apres l'ajout
+            }
+        }
+    }
+
+    public float maxPenguinSwimmingDepth() {
+        float maxDepth = 0;
+        for (Aquatic animal : aquaticAnimals) {
+            if (animal instanceof Penguin) {
+                float depth = ((Penguin) animal).swimmingDepth;
+                if (depth > maxDepth)
+                    maxDepth = depth;
+            }
+        }
+        return maxDepth;
+    }
+
+    public void displayNumberOfAquaticsByType(){
+        int nbDauphin=0;
+        int nbPenguin=0;
+        for (Aquatic animal : aquaticAnimals) {
+            if (animal instanceof Penguin) {
+                nbPenguin++;
+            }
+            if (animal instanceof Dauphin){
+                nbPenguin++;
+            }
+        }
+        System.out.println("le nombre des penguin est"+nbPenguin+"le nombre des dauphins"+nbDauphin);
+    }
+
+
+
 
 }
 
