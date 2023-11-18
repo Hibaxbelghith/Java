@@ -2,7 +2,7 @@ package tn.esprit.gestionzoo.entities;
 
 public class SocieteArrayList implements IGestion<T>{
 
-    List EmployeeList = new ArrayList();
+    List <Employe>EmployeeList = new ArrayList();
 
     @Override
     public void ajouterEmploye(T t) {
