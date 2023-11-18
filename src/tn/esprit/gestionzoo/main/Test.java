@@ -61,8 +61,8 @@ public class Test {
         System.out.println(P);
         //redefinition : meme affichage pour aquatic et penguin et affichage particulier pour dauphin
         //aqua.swim();
-        D.swim();
-        P.swim();
+        //D.swim();
+        //P.swim();
 
         //Instruction 26
         //myZoo.addAquaticAnimal(aqua);
@@ -80,7 +80,9 @@ public class Test {
     }
 
 
-
+        //Instruction 38
+        Aquatic aqua = new Aquatic("Ocean","Dolphinidae","Flipper",12,true);
+        aqua.eatMeat(Food.MEAT);
 
 
 

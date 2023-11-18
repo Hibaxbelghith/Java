@@ -12,8 +12,8 @@ public class Penguin extends Aquatic{
         return ("profondeur : "+this.swimmingDepth+" "+"habitat : "+this.habitat+" "+"Famille : "+super.getFamily()+" "+"nom : "+super.getName()+" "+"age : "+super.getAge()+" "+"isMammal ? :"+super.isMammal());
     }
 
-    @Override
-    public void swim(){
-        System.out.println("This aquatic is swimming.");
-    }
+    //@Override
+    //public void swim(){
+    //    System.out.println("This aquatic is swimming.");
+    //}
 }
